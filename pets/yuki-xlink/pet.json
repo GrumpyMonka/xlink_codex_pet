@@ -1,0 +1,310 @@
+{
+  "formatVersion": 1,
+  "id": "yuki-xlink",
+  "name": "Yuki XLink",
+  "description": "Yuki XLink for XLink Player only. One set of 384 x 416 frames; balanced 120–200ms holds, with larger pose changes held longer.",
+  "license": {
+    "text": "AI-generated project artwork; XLink branding belongs to its owner. No separate third-party character pack used."
+  },
+  "defaultAction": "idle",
+  "actions": {
+    "idle": {
+      "frames": [
+        {
+          "file": "assets/idle/00.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/idle/01.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/idle/02.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/idle/03.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/idle/04.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/idle/05.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    "running-right": {
+      "frames": [
+        {
+          "file": "assets/running-right/00.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running-right/01.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/running-right/02.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-right/03.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-right/04.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running-right/05.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/running-right/06.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-right/07.png",
+          "durationMs": 200
+        }
+      ]
+    },
+    "running-left": {
+      "frames": [
+        {
+          "file": "assets/running-left/00.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running-left/01.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/running-left/02.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-left/03.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-left/04.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running-left/05.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/running-left/06.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/running-left/07.png",
+          "durationMs": 200
+        }
+      ]
+    },
+    "waving": {
+      "frames": [
+        {
+          "file": "assets/waving/00.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/waving/01.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/waving/02.png",
+          "durationMs": 160
+        },
+        {
+          "file": "assets/waving/03.png",
+          "durationMs": 130
+        }
+      ]
+    },
+    "jumping": {
+      "frames": [
+        {
+          "file": "assets/jumping/00.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/jumping/01.png",
+          "durationMs": 170
+        },
+        {
+          "file": "assets/jumping/02.png",
+          "durationMs": 170
+        },
+        {
+          "file": "assets/jumping/03.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/jumping/04.png",
+          "durationMs": 150
+        }
+      ]
+    },
+    "failed": {
+      "frames": [
+        {
+          "file": "assets/failed/00.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/failed/01.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/failed/02.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/failed/03.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/failed/04.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/failed/05.png",
+          "durationMs": 160
+        },
+        {
+          "file": "assets/failed/06.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/failed/07.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    "waiting": {
+      "frames": [
+        {
+          "file": "assets/waiting/00.png",
+          "durationMs": 200
+        },
+        {
+          "file": "assets/waiting/01.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/waiting/02.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/waiting/03.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/waiting/04.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/waiting/05.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    "running": {
+      "frames": [
+        {
+          "file": "assets/running/00.png",
+          "durationMs": 170
+        },
+        {
+          "file": "assets/running/01.png",
+          "durationMs": 170
+        },
+        {
+          "file": "assets/running/02.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running/03.png",
+          "durationMs": 190
+        },
+        {
+          "file": "assets/running/04.png",
+          "durationMs": 170
+        },
+        {
+          "file": "assets/running/05.png",
+          "durationMs": 190
+        }
+      ],
+      "label": "Танцует"
+    },
+    "review": {
+      "frames": [
+        {
+          "file": "assets/review/00.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/review/01.png",
+          "durationMs": 130
+        },
+        {
+          "file": "assets/review/02.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/review/03.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/review/04.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/review/05.png",
+          "durationMs": 150
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "idle": {
+      "action": "idle"
+    },
+    "running-right": {
+      "action": "running-right"
+    },
+    "running-left": {
+      "action": "running-left"
+    },
+    "waving": {
+      "action": "waving"
+    },
+    "jumping": {
+      "action": "jumping"
+    },
+    "failed": {
+      "action": "failed"
+    },
+    "waiting": {
+      "action": "waiting"
+    },
+    "running": {
+      "action": "running"
+    },
+    "review": {
+      "action": "review"
+    }
+  },
+  "author": {
+    "name": "XLink",
+    "url": "https://github.com/GrumpyMonka/xlink_codex_pet"
+  }
+}

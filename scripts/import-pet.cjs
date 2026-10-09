@@ -1,0 +1,8 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');const {readPetDirectory}=require('./pets.cjs');
+function importPet(repo,source){source=fs.realpathSync(source);const metadata=JSON.parse(fs.readFileSync(path.join(source,'pet.json'),'utf8').replace(/^\uFEFF/,''));const {pet,assets}=readPetDirectory(source,metadata.id);const destination=path.join(repo,'pets',pet.id);if(fs.existsSync(destination))throw Error('Pet already exists: '+pet.id+'. Existing files were not changed.');
+ const state=path.join(repo,'.runtime');fs.mkdirSync(state,{recursive:true});const stage=path.join(state,'import-'+crypto.randomUUID());fs.mkdirSync(stage);
+ try{fs.writeFileSync(path.join(stage,'pet.json'),JSON.stringify(pet,null,2)+'\n');for(const [name,asset]of assets){const target=path.join(stage,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(asset.file,target);}for(const entry of fs.readdirSync(source,{withFileTypes:true})){if(!entry.isFile()||!/[.](md|txt)$/i.test(entry.name))continue;fs.copyFileSync(path.join(source,entry.name),path.join(stage,entry.name));}fs.mkdirSync(path.dirname(destination),{recursive:true});if(fs.existsSync(destination))throw Error('Pet appeared during import. Nothing overwritten.');fs.renameSync(stage,destination);return pet.id;
+ }catch(e){/* Keep failed staging data under ignored .runtime for diagnosis. */throw e;}
+}
+if(require.main===module){try{if(!process.argv[2])throw Error('Choose a directory containing pet.json');console.log('Imported pet: '+importPet(path.resolve(__dirname,'..'),process.argv[2]));}catch(e){console.error(e.message);process.exitCode=1;}}
+module.exports={importPet};

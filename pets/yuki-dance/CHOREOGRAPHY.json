@@ -1,0 +1,1208 @@
+{
+  "reference": "https://www.youtube.com/watch?v=R2gvIXAtc-s",
+  "adaptation": true,
+  "fps": null,
+  "durationMs": 25630,
+  "uniqueSprites": 120,
+  "exposures": 230,
+  "removed": "Previous stretching intro and side/back turn frames 24–35 and 65–69. Wrist/head shaking sprites 0–23 and single-arm overhead sprites 36–47 removed everywhere; no replacements or retiming.",
+  "sections": [
+    {
+      "label": "Жесты в стороны",
+      "startMs": 0,
+      "endMs": 3580,
+      "sprites": [
+        120,
+        120,
+        121,
+        121,
+        122,
+        122,
+        123,
+        123,
+        124,
+        124,
+        125,
+        125,
+        126,
+        126,
+        127,
+        127,
+        128,
+        128,
+        129,
+        129,
+        130,
+        130,
+        131,
+        131
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    {
+      "label": "Волна руками",
+      "startMs": 3580,
+      "endMs": 7280,
+      "sprites": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        107,
+        106,
+        105,
+        104,
+        103,
+        102,
+        101,
+        100,
+        99,
+        98,
+        97,
+        96
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/096.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/097.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/098.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/099.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/100.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/101.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/102.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/103.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/104.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-09.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/105.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-02.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/106.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/107.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/107.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/106.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-02.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/105.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-09.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/104.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/103.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/102.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/101.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/100.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/099.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/098.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/097.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/096.png",
+          "durationMs": 140
+        }
+      ]
+    },
+    {
+      "label": "Ладони и приседания",
+      "startMs": 7280,
+      "endMs": 9340,
+      "sprites": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        59,
+        58,
+        57,
+        56,
+        55,
+        54,
+        53,
+        52,
+        51,
+        50,
+        49,
+        48
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/048.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/049.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/050.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/051.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/052.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/053.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/054.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/055.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/056.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/057.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/058.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/059.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/059.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/058.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/057.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/056.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/055.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/054.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/053.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/052.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/051.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/050.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/049.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/048.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    {
+      "label": "Палец у лица",
+      "startMs": 9340,
+      "endMs": 11470,
+      "sprites": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        71,
+        70,
+        69,
+        68,
+        67,
+        66,
+        65,
+        64,
+        63,
+        62,
+        61,
+        60
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/060.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/061.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/062.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/063.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/064.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/065.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/066.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/067.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/068.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/069.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/070.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/071.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/071.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/070.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/069.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/068.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/067.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/066.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/065.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/064.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/063.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/062.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/061.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/060.png",
+          "durationMs": 150
+        }
+      ]
+    },
+    {
+      "label": "Припев",
+      "startMs": 11470,
+      "endMs": 22370,
+      "sprites": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        35,
+        34,
+        33,
+        32,
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        131,
+        130,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        122,
+        121,
+        120
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/108.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/109.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/110.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/111.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-01.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/112.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/113.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/114.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/115.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/116.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/117.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/118.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/119.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-11.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/132.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/133.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/134.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/135.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-03.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/136.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-00.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/137.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/138.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/139.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/140.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/141.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/142.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/143.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/024.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/025.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/026.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/027.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/028.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/029.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/030.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/031.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/032.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/033.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/034.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/035.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/035.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/034.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/033.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/032.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/031.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/030.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/029.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/028.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/027.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/026.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/025.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/024.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    {
+      "label": "V-жест",
+      "startMs": 22370,
+      "endMs": 24590,
+      "sprites": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        83,
+        82,
+        81,
+        80,
+        79,
+        78,
+        77,
+        76,
+        75,
+        74,
+        73,
+        72
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/072.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/073.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/074.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/075.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/076.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/077.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/078.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/079.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/080.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/081.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/082.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/083.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/083.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/082.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/081.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/080.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/079.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/078.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/077.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/076.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/075.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/074.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/073.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/072.png",
+          "durationMs": 120
+        }
+      ]
+    },
+    {
+      "label": "Финал без поворота",
+      "startMs": 24590,
+      "endMs": 25630,
+      "sprites": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "frames": [
+        {
+          "file": "assets/dance/084.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/085.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/086.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/087.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/088.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/089.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/090.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/091.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/092.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/093.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/094.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/095.png",
+          "durationMs": 120
+        }
+      ]
+    }
+  ],
+  "repetitionPolicy": "Each section once. Natural outward/return phases retained; repeated full sections removed. Final duplicate V gesture removed.",
+  "timing": "Balanced 80–150ms holds. Similar-pose exposures reduced 10ms, large-change exposures extended 10ms; middle durations unchanged.",
+  "cadence": {
+    "minMs": 80,
+    "maxMs": 150,
+    "method": "Adjacent full-body image difference on 96x104 previews, bounded by 20th/85th positive-difference percentiles.",
+    "lowDifference": 5.402276976495727,
+    "highDifference": 25.519764957264957,
+    "adjustment": "Small follow-up: -10ms at low-change end, +10ms at high-change end."
+  }
+}

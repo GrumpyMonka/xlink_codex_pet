@@ -1,0 +1,970 @@
+{
+  "formatVersion": 1,
+  "id": "yuki-dance",
+  "name": "Yuki Dance",
+  "description": "Yuki Dance with balanced 80–150ms frame holds. Similar poses slightly faster; large pose changes slower. 120 sprites including 12 drawn in-betweens. No wrist shaking, single-arm overhead gestures or repeated section loops.",
+  "author": {
+    "name": "XLink",
+    "url": "https://github.com/GrumpyMonka/xlink_codex_pet"
+  },
+  "license": {
+    "text": "AI-generated Yuki artwork. XLink branding belongs to its owner. Choreography inspired by Chikatto Chika Chika from Kaguya-sama: Love Is War. No original anime frames or audio are included."
+  },
+  "defaultAction": "dance",
+  "actions": {
+    "dance": {
+      "label": "Танец Чики",
+      "frames": [
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/096.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/097.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/098.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/099.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/100.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/101.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/102.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/103.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/104.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-09.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/105.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-02.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/106.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/107.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/107.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/106.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-02.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/105.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-09.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/104.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/103.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/102.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/101.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/100.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/099.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/098.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/097.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/096.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/048.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/049.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/050.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/051.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/052.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/053.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/054.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/055.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/056.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/057.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/058.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/059.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/059.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/058.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/057.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/056.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/055.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/054.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/053.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/052.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/051.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/050.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/049.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/048.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/060.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/061.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/062.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/063.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/064.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/065.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/066.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/067.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/068.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/069.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/070.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/071.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/071.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/070.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/069.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/068.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/067.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/066.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/065.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/064.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/063.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/062.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/061.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/060.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/108.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/109.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/110.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/111.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-01.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/112.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/113.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/114.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/115.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/116.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/117.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/118.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/119.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-11.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/132.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/133.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/134.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/135.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-03.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/136.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-00.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/137.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/138.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/139.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/140.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/141.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/142.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/143.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/024.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/025.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/026.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/027.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/028.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/029.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/030.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/031.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/032.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/033.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/034.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/035.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/035.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/034.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/033.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/032.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/031.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/030.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/029.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/028.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/027.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/026.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/025.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/024.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/131.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/130.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-05.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/129.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/bridge-04.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/128.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/127.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/126.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-08.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/125.png",
+          "durationMs": 140
+        },
+        {
+          "file": "assets/dance/124.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-07.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/123.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-06.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/122.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/bridge-10.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/121.png",
+          "durationMs": 150
+        },
+        {
+          "file": "assets/dance/120.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/072.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/073.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/074.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/075.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/076.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/077.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/078.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/079.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/080.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/081.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/082.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/083.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/083.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/082.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/081.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/080.png",
+          "durationMs": 110
+        },
+        {
+          "file": "assets/dance/079.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/078.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/077.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/076.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/075.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/074.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/073.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/072.png",
+          "durationMs": 120
+        },
+        {
+          "file": "assets/dance/084.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/085.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/086.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/087.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/088.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/089.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/090.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/091.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/092.png",
+          "durationMs": 80
+        },
+        {
+          "file": "assets/dance/093.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/094.png",
+          "durationMs": 90
+        },
+        {
+          "file": "assets/dance/095.png",
+          "durationMs": 120
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "idle": {
+      "action": "dance"
+    },
+    "running-right": {
+      "action": "dance"
+    },
+    "running-left": {
+      "action": "dance"
+    },
+    "waving": {
+      "action": "dance"
+    },
+    "jumping": {
+      "action": "dance"
+    },
+    "failed": {
+      "action": "dance"
+    },
+    "waiting": {
+      "action": "dance"
+    },
+    "running": {
+      "action": "dance"
+    },
+    "review": {
+      "action": "dance"
+    }
+  }
+}

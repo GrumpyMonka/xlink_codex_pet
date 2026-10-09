@@ -1,0 +1,378 @@
+{
+  "formatVersion": 1,
+  "id": "vpet",
+  "name": "Loris",
+  "description": "Оригинальные анимации VPet: спокойное ожидание, размышление при работе, ходьба при перемещении. Поглаживание с входом и выходом.",
+  "license": {
+    "url": "https://github.com/LorisYounger/VPet/blob/c3420bb77d6d00ed5fabf975a0945c4f6179bba3/README_en.md"
+  },
+  "defaultAction": "idle",
+  "actions": {
+    "idle": {
+      "frames": [
+        {
+          "file": "assets/idle/000.png",
+          "durationMs": 250
+        },
+        {
+          "file": "assets/idle/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/idle/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/idle/003.png",
+          "durationMs": 375
+        },
+        {
+          "file": "assets/idle/004.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/idle/005.png",
+          "durationMs": 250
+        },
+        {
+          "file": "assets/idle/006.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/idle/007.png",
+          "durationMs": 125
+        }
+      ]
+    },
+    "dance": {
+      "frames": [
+        {
+          "file": "assets/dance/000.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/003.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/004.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/005.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/006.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/007.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/008.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/009.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/010.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/011.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/012.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/013.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/014.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/015.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/016.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/017.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/018.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/019.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/020.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/dance/021.png",
+          "durationMs": 125
+        }
+      ]
+    },
+    "think": {
+      "frames": [
+        {
+          "file": "assets/think/000.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/003.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/004.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/005.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/006.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/007.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/think/008.png",
+          "durationMs": 125
+        }
+      ]
+    },
+    "walk": {
+      "frames": [
+        {
+          "file": "assets/walk/000.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/walk/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/walk/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/walk/003.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/walk/004.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/walk/005.png",
+          "durationMs": 125
+        }
+      ]
+    },
+    "pat": {
+      "frames": [
+        {
+          "file": "assets/pat/a0.png",
+          "durationMs": 250
+        },
+        {
+          "file": "assets/pat/a1.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/000.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/003.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/004.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/005.png",
+          "durationMs": 250
+        },
+        {
+          "file": "assets/pat/006.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/007.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/008.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/009.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/010.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/c0.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/pat/c1.png",
+          "durationMs": 250
+        }
+      ]
+    },
+    "sad": {
+      "frames": [
+        {
+          "file": "assets/sad/000.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/001.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/002.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/003.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/004.png",
+          "durationMs": 375
+        },
+        {
+          "file": "assets/sad/005.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/006.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/007.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/008.png",
+          "durationMs": 500
+        },
+        {
+          "file": "assets/sad/009.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/010.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/011.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/012.png",
+          "durationMs": 375
+        },
+        {
+          "file": "assets/sad/013.png",
+          "durationMs": 375
+        },
+        {
+          "file": "assets/sad/014.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/015.png",
+          "durationMs": 125
+        },
+        {
+          "file": "assets/sad/016.png",
+          "durationMs": 125
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "idle": {
+      "action": "idle"
+    },
+    "running": {
+      "action": "think"
+    },
+    "running-left": {
+      "action": "walk",
+      "mirror": true
+    },
+    "running-right": {
+      "action": "walk"
+    },
+    "waving": {
+      "action": "pat"
+    },
+    "jumping": {
+      "action": "dance"
+    },
+    "review": {
+      "action": "think"
+    },
+    "waiting": {
+      "action": "think"
+    },
+    "failed": {
+      "action": "sad"
+    }
+  },
+  "author": {
+    "name": "VUP-Simulator",
+    "url": "https://github.com/LorisYounger/VPet"
+  }
+}

@@ -1,0 +1,6 @@
+VPet / VUP-Simulator animation files, copyright VUP-Simulator team.
+Source: https://github.com/LorisYounger/VPet
+Commit: c3420bb77d6d00ed5fabf975a0945c4f6179bba3
+Local non-commercial trial. Artwork unchanged; original frame durations preserved.
+Non-commercial use requires informing users of the animation source and linking to the source project. Commercial use requires contacting the author and the additional notices described in VPet-README-en.md. Redistribution must include these authorization terms and source link, with no charge for animation files. The code license does not replace the animation license. Complete upstream terms are included in VPet-README-en.md.
+This preview is not a native 30 fps animation pack. Most source drawings use 125 ms exposure (~8 fps), with longer holds in some clips.

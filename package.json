@@ -1,0 +1,8 @@
+{
+  "name": "xlink-codex-pet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental Windows Codex pet player with independent animation packs",
+  "engines": {"node": ">=22"},
+  "scripts": {"validate": "node scripts/validate.cjs", "test": "node --test tests/pets.test.cjs tests/import.test.cjs tests/live.test.cjs tests/metadata.test.cjs", "preview": "node scripts/preview.cjs"}
+}

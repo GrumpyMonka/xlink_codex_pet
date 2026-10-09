@@ -1,0 +1,187 @@
+{
+  "tool": "built-in image_gen",
+  "sheets": [
+    "a4155e05-2e82-4982-977f-9dd7900fcf71",
+    "31602461-8013-426c-ba6e-c43a82879509",
+    "e858b120-6bc3-4382-a7c7-cb38c3f200e6",
+    "dc3bb857-2b1a-4775-861f-b70ad69d52c1",
+    "8ff41409-a623-4719-9b84-96a6d9ea153b",
+    "759e5251-b894-4ab6-a5cf-1c3fe562c9ab",
+    "f4da3d9f-61ea-42d6-8d13-c087c037cc16",
+    "71ca09b3-5ede-4360-bda6-877a79373915"
+  ],
+  "prompts": [
+    "Use case: identity-preserve. Create a production animation sprite sheet, exactly 4 columns by 3 rows, 12 separate full-body drawings of Yuki, transparent background, generous clear gutters, no labels. Image 1 is the character identity and outfit reference: preserve the silver hair, red eyes, black hoodie, orange XLink geometric chest emblem, proportions and clean shading. Images 2–4 are ONLY pose/motion references from a dance; do not copy their character or costume. Match their asymmetric outstretched raised arms: viewer-left arm reaches upward and forward with its hand above the head; viewer-right arm reaches forward near the face, fingers near cheek/eyes. Both shoulders and elbows stay almost stationary throughout. Animate a rapid loose WRIST SHAKE: sharply alternate drooping spread fingers, wrist cocked sideways, fingers briefly lifted, drooping again. No whole-arm sweeps. Simultaneously HEAD SHAKES left-right around neck with small alternating 8-degree tilts, squeezed cheerful eyes during shake, long hair follows minimally. 12 ordered frames read left-to-right/top-to-bottom depict THREE repeated short wrist/head shake beats, four phases per beat, with slightly different finger arrangements. Body/legs stay fixed, every full-body drawing same scale/baseline. Neck visible and anatomy coherent. Preserve outfit/brand, constant lighting and hair shadows. No spinning, no back views, no motion-blur ghost limbs. This is a wholesome cartoon desktop companion dance.\nFinal eye correction: Edit this exact 4 by 3 animation sprite sheet. Change ONLY the eyes in all 12 characters: BOTH red eyes OPEN, with the same bright red iris design and gentle happy expression of Yuki's original character. No squeezed-shut eyes, no winking, no closed-eye faces in any cell. Preserve precisely all existing raised arm poses, wrist/finger gestures, head tilts, body, proportions, hair, constant shading, black branded hoodie with orange XLink emblem, grid layout, frame scale and transparent background. Keep the full 12-frame drawings otherwise unchanged.",
+    "Edit this animation sheet into a complementary 12-frame sequence, exactly the same 4-column 3-row grid, same Yuki identity, same full-body scale, black branded hoodie, fixed lighting and transparent background. Preserve the asymmetric raised outstretched arm placement: viewer-left wrist above head, viewer-right wrist beside face. Change ONLY wrist angles, finger poses, and head angle. IMPORTANT BOTH wrists must visibly snap left-right/up-down across the frames; the right hand must not remain frozen in one spread pose. The head visibly alternates LEFT tilt 10 degrees, center, RIGHT tilt 10 degrees, center, repeated over three beats. At the left tilt both relaxed hands droop; at center both wrists flex sideways; at right tilt fingers lift and fan; at center wrists turn inward. Fingers stay loosely spread, not pointing one index finger. The elbows and shoulders remain in place; no sweeping arms across space. Small hair follow-through, stable hair shading. Every character complete and separated with transparent gutters. No back views, no spinning, no extra limbs, no background, no blur. Wholesome playful wrist-and-head shaking desktop character.\nFinal eye correction: Edit this exact 4 by 3 animation sprite sheet. Change ONLY the eyes in all 12 characters: BOTH red eyes OPEN, with the same bright red iris design and gentle happy expression of Yuki's original character. No squeezed-shut eyes, no winking, no closed-eye faces in any cell. Preserve precisely all existing raised arm poses, wrist/finger gestures, head tilts, body, proportions, hair, constant shading, black branded hoodie with orange XLink emblem, grid layout, frame scale and transparent background. Keep the full 12-frame drawings otherwise unchanged.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 one slow open-arm gesture transition: frame1 elbows bent, hands near chest palms outward. Frames2–4 extend elbows smoothly sideways. Frames5–6 arms half open. Frames7–9 arms fully out sideways below shoulder height. Frames10–12 raise the spread arms gradually to wide V over head. All frames facing front and feet planted, small knee bend. No wink or drastic head movement. Fine intermediate limb positions.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 overhead arm gesture: begin both hands at chest height, raise right forearm near temple gradually over frames2–5; frames6–8 raise right hand overhead while left hand rests waist; frames9–12 right wrist sways gently left to right above head. Small alternating foot weight shift, body frontal, no turns. ONE connected gesture with smooth increments.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 soft palms and knee-bend gesture: start hands slightly apart chest height, bring palms together gradually frames2–5, touch palms frames6–7, separate hands slowly frames8–10, knees bend softly frames10–12 with hands remaining forward. Never crouch abruptly; total bend modest. Same centered head and static hair shadows.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 finger-up gesture: frame1 hands in front chest, right elbow rises slowly frames2–4, right index points up beside cheek frames5–7; gently lean head five degrees toward finger frames8–10; start returning upright frames11–12. Left hand stays near chest. Front facing always, no rotation, preserve hair cel shading and face.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 V gesture at face: begin hands low near chest, gradually lift both hands toward cheeks frames2–5, spread index and middle fingers into V frames6–8, subtle head tilt frames9–10, return head neutral frames11–12 while V fingers stay beside cheeks. Slow connected incremental animation, no sudden expression switches.",
+    "Use case: illustration-story. Animated game sprite sheet for Yuki Dance. Reference image supplies exact character identity, outfit and ink style. Draw exactly TWELVE sequential frames laid out 4 columns by 3 rows, reading order. Transparent background. Full body chibi Yuki: long silver hair, red eyes, small elf ears, black thigh-length oversized hoodie with exactly the SAME outlined red XLink chest emblem, bare feet. Hoodie completely covers hips in every pose. Fixed frontal camera; constant scale, ground line, face, hair volume, simple cel shadows with identical static illumination. This sheet is a SINGLE smooth continuous motion, NOT a collection of unrelated poses. Change limbs only by small increments between neighboring frames, naturally connected shoulders, neck, knees; no snapping arm position or missing limbs. Leave 20px margins around every character, all feet/hands/hair entirely within its cell. No text, no grid lines, no extra objects. Keep torso facing viewer throughout. Frames1–12 frontal ending/return gesture: first frame both hands form V beside cheeks; slowly lower forearms frames2–5, frame6 hands near chest palms down; frames7–9 sweep both bent forearms towards viewer-left; frames10–12 arrive at left extreme of hand sweep. Face and torso remain frontal throughout, NO side views, NO rear view, NO spinning. This connects ending to first hand-sweep sequence."
+  ],
+  "keptOriginalSprites": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "notes": "Opening follows reference 13–15 seconds: asymmetric raised outstretched arms, rapid wrist angle changes and head shaking. Shoulders and elbows held in position. Previous chest-level and whole-arm sweep attempts rejected. Front-facing only. These gestures were subsequently cut entirely at user request. Remaining timings and drawings unchanged.",
+  "excludedSpriteIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "motionBridges": {
+    "sheet": "a7aa1c04-7e9a-4c91-b6e9-79706ca04534",
+    "pairs": [
+      {
+        "a": "assets/dance/136.png",
+        "b": "assets/dance/137.png",
+        "diff": 954893
+      },
+      {
+        "a": "assets/dance/111.png",
+        "b": "assets/dance/112.png",
+        "diff": 949426
+      },
+      {
+        "a": "assets/dance/105.png",
+        "b": "assets/dance/106.png",
+        "diff": 933399
+      },
+      {
+        "a": "assets/dance/135.png",
+        "b": "assets/dance/136.png",
+        "diff": 930990
+      },
+      {
+        "a": "assets/dance/128.png",
+        "b": "assets/dance/129.png",
+        "diff": 911862
+      },
+      {
+        "a": "assets/dance/129.png",
+        "b": "assets/dance/130.png",
+        "diff": 842201
+      },
+      {
+        "a": "assets/dance/122.png",
+        "b": "assets/dance/123.png",
+        "diff": 822729
+      },
+      {
+        "a": "assets/dance/123.png",
+        "b": "assets/dance/124.png",
+        "diff": 816341
+      },
+      {
+        "a": "assets/dance/125.png",
+        "b": "assets/dance/126.png",
+        "diff": 804270
+      },
+      {
+        "a": "assets/dance/104.png",
+        "b": "assets/dance/105.png",
+        "diff": 780452
+      },
+      {
+        "a": "assets/dance/121.png",
+        "b": "assets/dance/122.png",
+        "diff": 761517
+      },
+      {
+        "a": "assets/dance/119.png",
+        "b": "assets/dance/132.png",
+        "diff": 757738
+      }
+    ],
+    "tool": "built-in image_gen",
+    "prompt": "Use case: identity-preserve. Animation in-between drawing sheet for Yuki. Input is a reference board with 4 columns and 3 rows; EACH CELL contains TWO endpoint poses, left A and right B. Produce exactly 12 SINGLE full-body in-between drawings in a 4-column 3-row grid, one drawing per cell corresponding to that input cell. Each output is the halfway anatomical pose between that cell's two endpoints, not a copy of either endpoint. Interpolate arm placement, elbow bending, leg stance, knee bend, head tilt, hand placement. Example first cell: midway rising from squat to standing, knees partly bent. Cell2: arm halfway between stretched sideways and touching face. Cell3: halfway from sideways pointing to centered hands. Cell4: half squat with arms descending. Cells5/6: hands midway through lowering, knees partly flexing. Cell7/8/9: arms halfway between side gesture/face gesture and centered hands. Cell10: halfway from leaning sideways point to upright point. Cell11: arm halfway through lowering face salute. Cell12: hands halfway lowering from chest fists to relaxed. Preserve SAME silver-haired red-eyed character, black hoodie, precise orange geometric XLink chest emblem, chibi proportions, clean linework and fixed hair shadows. Character must be upright/coherent, neck attached, hands visible, fingers anatomically clean, no rig-like disconnected limbs. Exactly 12 full-body sprites, same consistent scale and baseline, ample transparent gutters. No endpoint pairs in output, no captions, no background, no motion blur, no double images. Existing closed-eye endpoints may transition to open eyes naturally. This is wholesome desktop dance animation.\n\nRefinement:\nundefined\n"
+  },
+  "cadence": {
+    "minMs": 80,
+    "maxMs": 150,
+    "method": "Adjacent full-body image difference on 96x104 previews, bounded by 20th/85th positive-difference percentiles.",
+    "lowDifference": 5.402276976495727,
+    "highDifference": 25.519764957264957,
+    "adjustment": "Small follow-up: -10ms at low-change end, +10ms at high-change end."
+  }
+}

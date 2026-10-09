@@ -1,0 +1,23 @@
+﻿// Experimental, session-only attachment to the installed Codex. No file patching.
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
+const {readPet}=require('./pets.cjs');
+const {readSpeeds}=require('./playback.cjs');
+function verifyMain(port){if(!Number.isInteger(port)||port<1||port>65535)throw Error('Invalid port'); const check=`$p=Get-AppxPackage -Name OpenAI.Codex; if([string]$p.Version -ne '26.1002.7124.0'){throw 'Unsupported Codex version'}; $exe=Join-Path $p.InstallLocation 'app/ChatGPT.exe'; $roots=@(Get-CimInstance Win32_Process | Where-Object { $_.ExecutablePath -eq $exe -and $_.CommandLine -notmatch '--type=' -and $_.CommandLine -match '--remote-debugging-port=${port}(?: |$)' }); if(-not $roots.Count){throw 'Installed Codex with this diagnostic port was not found'}; if(-not (Get-NetTCPConnection -State Listen -LocalPort ${port} | Where-Object { $_.LocalAddress -eq '127.0.0.1' -and $_.OwningProcess -in $roots.ProcessId })){throw 'Port owner mismatch'}; Write-Output 'verified'`;
+ const encoded=Buffer.from("$ErrorActionPreference='Stop';"+check,'utf16le').toString('base64');cp.execFileSync('powershell.exe',['-NoProfile','-EncodedCommand',encoded],{stdio:'pipe'});
+}
+async function run(){const port=Number(process.argv[3]||9340),id=process.argv[2]||'vpet';if(!Number.isInteger(port)||port<1||port>65535)throw Error('Invalid port');
+ verifyMain(port);
+ const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`,{signal:AbortSignal.timeout(5000)})).json(),target=targets.find(t=>t.type==='page'&&t.url.startsWith('app://-/index.html')&&t.url.includes('avatar-overlay'));if(!target&&(id==='--stop'||id==='--status')){console.log(JSON.stringify({active:false}));return;}if(!target&&id!=='--show')throw Error('Enable the pet window in Codex first');
+ const chosen=id==='--show'?targets.find(t=>t.type==='page'&&t.url.startsWith('app://-/index.html')):target;if(!chosen)throw Error('Codex not ready');
+ const url=new URL(chosen.webSocketDebuggerUrl);if(url.hostname!=='127.0.0.1'||Number(url.port)!==port||url.protocol!=='ws:')throw Error('Unexpected endpoint');
+ const repo=path.resolve(__dirname,'..');let expression;
+ if(id==='--status')expression='(()=>{const s=window.__xlinkMainPlayer?.status();return {active:!!s?.active,pet:s?.pet,speed:s?.speed,bridge:!!window.__xlinkToolbar&&Date.now()-(window.__xlinkBridgeSeen||0)<6000};})()';
+ else if(id==='--show')expression="(async()=>{const m=await import('app://-/assets/app-shared-40678a67f0e3.js');await m.aj.settings.write(m.y1t.petVisible.key,true);return {visible:true};})()";
+ else if(id==='--stop')expression='(()=>{window.__xlinkMainPlayer?.stop();return {active:false};})()';
+ else{const {pet,assets}=readPet(repo,id);const sources=Object.fromEntries([...assets].map(([k,a])=>[k,'data:image/png;base64,'+fs.readFileSync(a.file).toString('base64')]));
+ const source=fs.readFileSync(path.join(repo,'player/timeline.mjs'),'utf8').replaceAll('export ','')+'\n'+fs.readFileSync(path.join(repo,'player/player.mjs'),'utf8').replace(/import[^\n]+\n/,'').replaceAll('export ','').replaceAll('import.meta.url',JSON.stringify('app://-/assets/'))+'\n'+fs.readFileSync(path.join(repo,'player/main-memory-adapter.js'),'utf8').replace(/^\uFEFF/,'');
+ const speed=readSpeeds(repo)[id]??1;
+ expression='(async()=>{if('+JSON.stringify(process.argv.includes('--ensure'))+'&&window.__xlinkMainPlayer?.version===2&&window.__xlinkMainPlayer.status().active&&window.__xlinkMainPlayer.status().pet==='+JSON.stringify(id)+')return window.__xlinkMainPlayer.setSpeed('+speed+');'+source+';if(!await window.__xlinkMainPlayer.apply('+JSON.stringify(pet)+','+JSON.stringify(sources)+','+speed+'))throw Error("Native mascot missing");return window.__xlinkMainPlayer.status();})()';}
+ const ws=new WebSocket(url);try{const result=await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Attachment timeout')),30000);ws.addEventListener('error',()=>{clearTimeout(timer);reject(Error('Local connection failed'));});ws.addEventListener('open',()=>ws.send(JSON.stringify({id:1,method:'Runtime.evaluate',params:{expression,awaitPromise:true,returnByValue:true}})));ws.addEventListener('message',e=>{const r=JSON.parse(e.data);if(r.id!==1)return;clearTimeout(timer);const err=r.error?.message||r.result?.exceptionDetails?.exception?.description;if(err)reject(Error(err));else resolve(r.result?.result?.value);});});console.log(JSON.stringify(result));}finally{ws.close();}}
+module.exports={verifyMain};
+if(require.main===module)run().catch(e=>{console.error(e.message);process.exitCode=1});

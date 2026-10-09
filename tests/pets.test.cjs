@@ -1,0 +1,30 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{pathToFileURL}=require('node:url');
+const {readPet,assetPath}=require('../scripts/pets.cjs'),{createPreview}=require('../scripts/preview.cjs');const repo=path.resolve(__dirname,'..');
+test('bundled packages have valid assets and action bindings',()=>{for(const id of ['vpet','yuki']){const {pet,assets}=readPet(repo,id);assert(assets.size>0);for(const state of ['idle','running','running-left','running-right','waving','jumping','review','waiting','failed'])assert(pet.bindings[state]);}});
+test('asset traversal and unsafe pet identifiers rejected',()=>{for(const file of ['../outside.png','/absolute.png','assets/../../x.png','assets\\x.png'])assert.throws(()=>assetPath(repo,file));assert.throws(()=>readPet(repo,'../vpet'));});
+test('out-of-bounds rect and invalid timing rejected',()=>{const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'codex-pets-test-'));try{fs.mkdirSync(path.join(tmp,'pets/test/assets'),{recursive:true});fs.copyFileSync(path.join(repo,'pets/yuki/assets/spritesheet.png'),path.join(tmp,'pets/test/assets/test.png'));const pet={formatVersion:1,id:'test',name:'Test',license:{text:'test'},defaultAction:'idle',actions:{idle:{frames:[{file:'assets/test.png',rect:[99999,0,10,10],durationMs:125}]}}};const file=path.join(tmp,'pets/test/pet.json');fs.writeFileSync(file,JSON.stringify(pet));assert.throws(()=>readPet(tmp,'test'),/outside/);delete pet.actions.idle.frames[0].rect;pet.actions.idle.frames[0].durationMs=0;fs.writeFileSync(file,JSON.stringify(pet));assert.throws(()=>readPet(tmp,'test'),/duration/);}finally{assert.equal(path.dirname(path.resolve(tmp)),path.resolve(os.tmpdir()));assert(path.basename(tmp).startsWith("codex-pets-test-"));fs.rmSync(tmp,{recursive:true,force:true});}});
+test('timeline respects exposure boundaries, wraps, mirroring and reduced motion',async()=>{const {resolveFrame}=await import(pathToFileURL(path.join(repo,'player/timeline.mjs')).href);const pet={defaultAction:'idle',actions:{idle:{frames:[{durationMs:100},{durationMs:200}]}},bindings:{'running-left':{action:'idle',mirror:true}}};assert.equal(resolveFrame(pet,'idle',99).index,0);assert.equal(resolveFrame(pet,'idle',100).index,1);assert.equal(resolveFrame(pet,'idle',300).index,0);assert.equal(resolveFrame(pet,'idle',150,true).index,0);assert.equal(resolveFrame(pet,'running-left',0).mirror,true);assert.equal(resolveFrame(pet,'unknown',0).action,'idle');});
+test('state changes preserve a shared clip but restart different actions and idle sequences',async()=>{
+ const {resolveFrame}=await import(pathToFileURL(path.join(repo,'player/timeline.mjs')).href);
+ let now=0,callback;
+ const source=fs.readFileSync(path.join(repo,'player/player.mjs'),'utf8').replace(/^import[^\n]+\n/,'').replace('export function','function').replaceAll('import.meta.url',"'http://localhost/'");
+ const create=new Function('resolveFrame','performance','document','requestAnimationFrame','cancelAnimationFrame','ResizeObserver','devicePixelRatio',source+';return createCanvasPlayer;')(resolveFrame,{now:()=>now},{hidden:false,addEventListener(){},removeEventListener(){}},fn=>{callback=fn;return 1;},()=>{},class{observe(){}disconnect(){}},1);
+ const ctx={clearRect(){},save(){},translate(){},scale(){},drawImage(){},restore(){}};
+ const canvas={getContext:()=>ctx,getBoundingClientRect:()=>({width:100,height:100}),dataset:{}};
+ const frames=[{file:'a.png',durationMs:100},{file:'b.png',durationMs:200}];
+ const pet={defaultAction:'dance',actions:{dance:{frames},other:{frames}},bindings:{idle:{action:'dance'},running:{action:'dance'},waving:{action:'other'}}};
+ const player=create(canvas,pet,null,{images:frames.map(f=>[f.file,{width:100,height:100}])});
+ now=150;callback(now);assert.equal(canvas.dataset.petFrame,'1');
+ player.update({state:'running'});callback(now);assert.equal(canvas.dataset.petFrame,'1');
+ player.update({state:'waving'});callback(now);assert.equal(canvas.dataset.petFrame,'0');assert.equal(canvas.dataset.petAction,'other');
+ pet.idleSequence=['dance','other'];player.update({state:'idle'});now+=350;callback(now);assert.equal(canvas.dataset.petAction,'other');
+ player.update({state:'running'});callback(now);assert.equal(canvas.dataset.petFrame,'0');assert.equal(canvas.dataset.petAction,'dance');
+ player.update({speed:5});now+=20;callback(now);assert.equal(canvas.dataset.petFrame,'1');
+ player.update({speed:0.2});callback(now);assert.equal(canvas.dataset.petFrame,'1');
+ now+=500;callback(now);assert.equal(canvas.dataset.petFrame,'1');
+ now+=500;callback(now);assert.equal(canvas.dataset.petFrame,'0');
+ for(const speed of [0,6,NaN,Infinity,'2'])assert.throws(()=>player.update({speed}),/speed/);
+ player.dispose();
+});
+test('preview serves only allowed assets, never local state or repo files',async()=>{const server=createPreview(repo,'vpet');await new Promise(r=>server.listen(0,'127.0.0.1',r));try{const base=`http://127.0.0.1:${server.address().port}`;assert.equal((await fetch(base+'/')).status,200);assert.equal((await fetch(base+'/.runtime/settings.json')).status,404);assert.equal((await fetch(base+'/pets/vpet/pet.json')).status,404);assert.equal((await fetch(base+'/player/pet/assets/idle/000.png')).status,200);}finally{await new Promise(r=>server.close(r));}});
+

@@ -1,0 +1,656 @@
+{
+  "formatVersion": 1,
+  "id": "yuki",
+  "name": "Yuki",
+  "description": "Исходная спрайтовая Юки. Архивный вариант, не 30 fps. Не включает отклонённый разрезной риг.",
+  "license": {
+    "text": "AI-generated project artwork; XLink branding belongs to its owner. No separate third-party character pack used."
+  },
+  "defaultAction": "idle",
+  "actions": {
+    "idle": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 1680
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 660
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 660
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 840
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 840
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            0,
+            192,
+            208
+          ],
+          "durationMs": 1920
+        }
+      ]
+    },
+    "running-right": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1152,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1344,
+            208,
+            192,
+            208
+          ],
+          "durationMs": 220
+        }
+      ]
+    },
+    "running-left": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1152,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1344,
+            416,
+            192,
+            208
+          ],
+          "durationMs": 220
+        }
+      ]
+    },
+    "waving": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            624,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            624,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            624,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            624,
+            192,
+            208
+          ],
+          "durationMs": 280
+        }
+      ]
+    },
+    "jumping": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            832,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            832,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            832,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            832,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            832,
+            192,
+            208
+          ],
+          "durationMs": 280
+        }
+      ]
+    },
+    "failed": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1152,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 140
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            1344,
+            1040,
+            192,
+            208
+          ],
+          "durationMs": 240
+        }
+      ]
+    },
+    "waiting": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            1248,
+            192,
+            208
+          ],
+          "durationMs": 260
+        }
+      ]
+    },
+    "running": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 120
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            1456,
+            192,
+            208
+          ],
+          "durationMs": 220
+        }
+      ],
+      "label": "Танцует"
+    },
+    "review": {
+      "frames": [
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            0,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            192,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            384,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            576,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            768,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 150
+        },
+        {
+          "file": "assets/spritesheet.png",
+          "rect": [
+            960,
+            1664,
+            192,
+            208
+          ],
+          "durationMs": 280
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "idle": {
+      "action": "idle"
+    },
+    "running-right": {
+      "action": "running-right"
+    },
+    "running-left": {
+      "action": "running-left"
+    },
+    "waving": {
+      "action": "waving"
+    },
+    "jumping": {
+      "action": "jumping"
+    },
+    "failed": {
+      "action": "failed"
+    },
+    "waiting": {
+      "action": "waiting"
+    },
+    "running": {
+      "action": "running"
+    },
+    "review": {
+      "action": "review"
+    }
+  },
+  "native": {
+    "spritesheet": "assets/spritesheet.png",
+    "spriteVersionNumber": 2
+  },
+  "author": {
+    "name": "XLink",
+    "url": "https://github.com/GrumpyMonka/xlink_codex_pet"
+  }
+}

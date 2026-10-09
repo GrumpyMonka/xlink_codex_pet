@@ -1,0 +1,42 @@
+function CustomCanvasPet(props){
+  const {selection,loaded,...nativeProps}=props;
+  const canvas=O.useRef(null),controller=O.useRef(null),latest=O.useRef(nativeProps);
+  const [failed,setFailed]=O.useState(false);
+  latest.current=nativeProps;
+  O.useEffect(()=>{
+    const media=window.matchMedia('(prefers-reduced-motion: reduce)');
+    function sync(){controller.current?.update({state:latest.current.state||'idle',look:latest.current.lookFrame,reduced:document.documentElement.dataset.reducedMotion==='true'||(document.documentElement.dataset.reducedMotion!=='false'&&media.matches)});}
+    const observer=new MutationObserver(sync);
+    observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-reduced-motion']});media.addEventListener('change',sync);
+    controller.current=createCustomPlayer(canvas.current,selection.pet,loaded.values().next().value,{images:loaded,onError:()=>setFailed(true)});sync();
+    return()=>{controller.current?.dispose();controller.current=null;observer.disconnect();media.removeEventListener('change',sync);};
+  },[]);
+  O.useEffect(()=>{controller.current?.update({state:nativeProps.state||'idle',look:nativeProps.lookFrame});},[nativeProps.state,nativeProps.lookFrame]);
+  if(failed)return k.jsx(h,nativeProps);
+  return k.jsx('div',{className:nativeProps.className,'data-codex-pets':selection.pet.id,'data-live-revision':selection.revision,'aria-hidden':'true',title:selection.pet.name+' — '+selection.pet.license.notice,style:{position:'relative',width:'var(--codex-pet-width,7.04rem)',aspectRatio:'192 / 208'},children:k.jsx('canvas',{ref:canvas,style:{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}})});
+}
+function CustomPetSwitch(props){
+ const [active,setActive]=O.useState(null);
+ O.useEffect(()=>{
+  let alive=true,timer,revision='';const abort=new AbortController();
+  async function poll(){try{
+   const opts={cache:'no-store',signal:abort.signal};
+   const r=await fetch(new URL('./codex-pets/revision.json?t='+Date.now(),import.meta.url),opts);if(!r.ok)throw Error('Live pointer unavailable');
+   const next=await r.json();
+   if(next.revision!==revision){
+    const response=await fetch(new URL('./codex-pets/selection.json?t='+Date.now(),import.meta.url),opts);if(!response.ok)throw Error('Live selection unavailable');
+    const selection=await response.json();if(selection.revision!==next.revision)throw Error('Selection changed during load');
+    if(selection.version!==1||!['canvas','native'].includes(selection.player))throw Error('Invalid live selection');
+    const loaded=new Map();
+    if(selection.player==='canvas'){
+     const files=[...new Set(Object.values(selection.pet.actions).flatMap(a=>a.frames.map(f=>f.file)))];
+     await Promise.all(files.map(async file=>{const src=selection.images[file];if(!src?.startsWith('data:image/png;base64,'))throw Error('Invalid image');const im=new Image();im.src=src;await im.decode();loaded.set(file,im);}));
+    }
+    if(alive){revision=next.revision;setActive({selection,loaded});}
+   }
+  }catch(e){if(alive)console.debug('Pet selection retained:',e.message);}finally{if(alive)timer=setTimeout(poll,750);}}
+  poll();return()=>{alive=false;abort.abort();clearTimeout(timer);};
+ },[]);
+ if(!active||active.selection.player==='native')return k.jsx(h,props);
+ return k.jsx(CustomCanvasPet,{...props,...active},active.selection.revision);
+}
