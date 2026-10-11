@@ -10,7 +10,7 @@ function applyLive(repo,runtime,id,player='canvas'){
  const revision=crypto.randomUUID(),selection={version:1,revision,player};
  if(player==='canvas'){
  const {pet,assets}=readPet(repo,id);selection.pet=pet;selection.images={};
- for(const [name,asset]of assets)selection.images[name]='data:image/png;base64,'+fs.readFileSync(asset.file).toString('base64');
+ for(const [name,asset]of assets)selection.images[name]='data:'+asset.mime+';base64,'+fs.readFileSync(asset.file).toString('base64');
  }
  // Publish pointer last: readers never observe half-written JSON.
  atomic(path.join(runtime,LIVE,'selection.json'),selection,64*1024*1024);

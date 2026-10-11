@@ -20,8 +20,9 @@ try {
     }
     if($Action -eq 'stop'){$config.enabled=$false}
     $package=Get-AppxPackage -Name OpenAI.Codex | Select-Object -First 1
-    if(-not $package -or [string]$package.Version -ne '26.1002.7124.0'){throw 'Unsupported installed Codex version. No changes made.'}
+    if(-not $package){throw 'Installed Codex package was not found.'}
     $exe=Join-Path $package.InstallLocation 'app/ChatGPT.exe'
+    if(-not (Test-Path -LiteralPath $exe)){throw 'Installed Codex executable was not found.'}
     $roots=@(Get-CimInstance Win32_Process | Where-Object {$_.ExecutablePath -eq $exe -and $_.CommandLine -notmatch '--type='})
     $port=9340
     $connected=@($roots|Where-Object {$_.CommandLine -match '--remote-debugging-port=9340(?: |$)'})
@@ -71,9 +72,9 @@ try {
     else{
         # A detected normal launch is converted once, then its pet window is restored.
         if($Action -ne 'watch' -or $restarted){
-            $ready=$false
-            for($attempt=0;$attempt -lt 12;$attempt++){try{Invoke-Session '--show';$ready=$true;break}catch{Start-Sleep -Milliseconds 500}}
-            if(-not $ready){throw 'Codex did not expose its pet window. See logs.'}
+            $ready=$false;$lastShowError=$null
+            for($attempt=0;$attempt -lt 12;$attempt++){try{Invoke-Session '--show';$ready=$true;break}catch{$lastShowError=$_.Exception.Message;Start-Sleep -Milliseconds 500}}
+            if(-not $ready){throw "Cannot open the Codex pet window: $lastShowError"}
         }
         if($config.enabled){
             if($config.player -eq 'native'){

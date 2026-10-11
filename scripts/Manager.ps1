@@ -2,6 +2,7 @@
 $ErrorActionPreference='Stop'
 Add-Type -AssemblyName PresentationFramework,PresentationCore,WindowsBase,System.Windows.Forms
 . (Join-Path $PSScriptRoot 'Common.ps1')
+. (Join-Path $PSScriptRoot 'WebPPreview.ps1')
 $managerGate=$null
 if(-not $SmokeTest){
     New-Item -ItemType Directory -Force -Path $StateRoot | Out-Null
@@ -133,12 +134,17 @@ try {
         if(-not $Busy){Update-Connection;Update-PlayerMode}
     }
     function Get-FrameBitmap($Frame) {
-        $key=$Frame.file+':'+($Frame.rect -join ',');if($script:cache.ContainsKey($key)){return $script:cache[$key]}
+        if($Frame.file -match '\.webp$'){return Get-WebPPreviewFrame (Join-Path $RepoRoot ('pets/'+$script:pet.id)) $Frame}
+        $assetName=if($Frame.file -match '\.webp$'){$script:pet.previewImage}else{$Frame.file};$key=$assetName+':'+($Frame.rect -join ',');if($script:cache.ContainsKey($key)){return $script:cache[$key]}
         $root=[IO.Path]::GetFullPath((Join-Path $RepoRoot ('pets/'+$script:pet.id)))
-        if($Frame.file -notmatch '^[a-zA-Z0-9_./-]+\.png$' -or $Frame.file.StartsWith('/') -or ($Frame.file -split '/') -contains '..'){throw 'Invalid preview asset path.'}
-        $asset=[IO.Path]::GetFullPath((Join-Path $root $Frame.file));if(-not $asset.StartsWith($root+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Preview asset is outside package.'}
-        $bitmap=New-Object Windows.Media.Imaging.BitmapImage;$bitmap.BeginInit();$bitmap.CacheOption=[Windows.Media.Imaging.BitmapCacheOption]::OnLoad;$bitmap.UriSource=New-Object Uri $asset
-        if(-not $Frame.rect){$bitmap.DecodePixelHeight=600};$bitmap.EndInit();$bitmap.Freeze()
+        if($assetName -notmatch '^[a-zA-Z0-9_./-]+\.png$' -or $assetName.StartsWith('/') -or ($assetName -split '/') -contains '..'){throw 'Invalid preview asset path.'}
+        $asset=[IO.Path]::GetFullPath((Join-Path $root $assetName));if(-not $asset.StartsWith($root+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Preview asset is outside package.'}
+        # Read bytes instead of UriSource: WPF's URI cache survives our preview-cache reset.
+        $stream=[IO.File]::OpenRead($asset)
+        try{
+            $bitmap=New-Object Windows.Media.Imaging.BitmapImage;$bitmap.BeginInit();$bitmap.CacheOption=[Windows.Media.Imaging.BitmapCacheOption]::OnLoad;$bitmap.StreamSource=$stream
+            if(-not $Frame.rect){$bitmap.DecodePixelHeight=600};$bitmap.EndInit();$bitmap.Freeze()
+        }finally{$stream.Dispose()}
         if($Frame.rect){$r=$Frame.rect;$bitmap=New-Object Windows.Media.Imaging.CroppedBitmap($bitmap,(New-Object Windows.Int32Rect([int]$r[0],[int]$r[1],[int]$r[2],[int]$r[3])));$bitmap.Freeze()}
         $script:cache[$key]=$bitmap;return $bitmap
     }
@@ -156,7 +162,8 @@ try {
         $seconds=($ms/1000).ToString('0.###',$culture)
         $fps=($frames.Count*1000/$ms).ToString('0.##',$culture)
         $sizes=@($frames|ForEach-Object {
-            if($_.rect){'{0} × {1}' -f $_.rect[2],$_.rect[3]}
+            if($_.file -match '\.webp$'){'{0} × {1}' -f $script:pet.mediaSize[0],$script:pet.mediaSize[1]}
+              elseif($_.rect){'{0} × {1}' -f $_.rect[2],$_.rect[3]}
             else{
                 $asset=Join-Path $RepoRoot ('pets/'+$script:pet.id+'/'+$_.file)
                 $stream=[IO.File]::OpenRead($asset)
@@ -172,7 +179,7 @@ try {
     }
     function Select-Pet {
         if($script:loading -or -not $ui.PetList.SelectedItem){return}
-        $script:pet=$ui.PetList.SelectedItem;$script:cache=@{};$ui.PetTitle.Text=$script:pet.name;$ui.PetSummary.Text=('{0} действий · {1}' -f @($script:pet.actions.psobject.Properties).Count,$script:pet.id);$ui.LicenseInfo.Text=$script:pet.license.text
+        Clear-WebPPreview;$script:pet=$ui.PetList.SelectedItem;$script:cache=@{};$ui.PetTitle.Text=$script:pet.name;$ui.PetSummary.Text=('{0} действий · {1}' -f @($script:pet.actions.psobject.Properties).Count,$script:pet.id);$ui.LicenseInfo.Text=$script:pet.license.text
         $script:speed=if($script:speeds.ContainsKey($script:pet.id)){[double]$script:speeds[$script:pet.id]}else{1.0}
         $script:loading=$true;$ui.SpeedSlider.Value=[Math]::Log($script:speed,5);$script:loading=$false;Update-SpeedLabel
         if($script:pet.license.url){$ui.LicenseInfo.Text='Открыть лицензию / README'+[Environment]::NewLine+$script:pet.license.url}
@@ -196,7 +203,7 @@ try {
         $json=& node (Join-Path $PSScriptRoot 'install-native.cjs') --capabilities
         if($LASTEXITCODE -ne 0){throw 'Unable to inspect native compatibility'}
         $script:capabilities=$json | ConvertFrom-Json
-        $selected=if($script:pet){$script:pet.id}else{''};$pets=@();foreach($directory in Get-ChildItem -LiteralPath (Join-Path $RepoRoot 'pets') -Directory){$file=Join-Path $directory.FullName 'pet.json';if(Test-Path $file){try{$p=Get-Content $file -Raw -Encoding UTF8|ConvertFrom-Json;if($p.id -ne $directory.Name -or $p.id -notmatch '^[a-z0-9][a-z0-9-]{0,63}$' -or $p.formatVersion -ne 1){throw 'Invalid pet metadata'};$pets+=$p}catch{Write-Log "Пропущен пакет $($directory.Name): $($_.Exception.Message)"}}}
+        $selected=if($script:pet){$script:pet.id}else{''};$pets=@();foreach($directory in Get-ChildItem -LiteralPath (Join-Path $RepoRoot 'pets') -Directory){$file=Join-Path $directory.FullName 'pet.json';if(Test-Path $file){try{$p=Get-Content $file -Raw -Encoding UTF8|ConvertFrom-Json;if($p.id -ne $directory.Name -or $p.id -notmatch '^[a-z0-9][a-z0-9-]{0,63}$' -or $p.formatVersion -ne 1){throw 'Invalid pet metadata'};if(@($p.actions.psobject.Properties|Where-Object {$_.Value.file}).Count -gt 0){$normalized=& node (Join-Path $PSScriptRoot 'pets.cjs') $p.id;if($LASTEXITCODE -ne 0){throw 'Invalid animated pet'};$p=$normalized|ConvertFrom-Json};$pets+=$p}catch{Write-Log "Пропущен пакет $($directory.Name): $($_.Exception.Message)"}}}
         $script:loading=$true;$ui.PetList.ItemsSource=$pets;$ui.PetList.SelectedIndex=0;for($i=0;$i -lt $pets.Count;$i++){if($pets[$i].id -eq $selected){$ui.PetList.SelectedIndex=$i}};$script:loading=$false;Select-Pet;Update-Installed
     }
     function Start-Operation([string]$Operation,[string]$Source='') {
@@ -232,7 +239,7 @@ try {
         if(-not $script:paused){Draw-Frame}
         if($script:job -and $script:job.process.HasExited){$job=$script:job;$script:job=$null;foreach($suffix in @('.out','.err')){if(Test-Path ($job.request+$suffix)){Write-Log (Get-Content ($job.request+$suffix) -Raw -Encoding UTF8)}};$resultFile=$job.request+'.result.json';if(Test-Path $resultFile){$result=Get-Content $resultFile -Raw -Encoding UTF8|ConvertFrom-Json;if($result.success){$ui.Status.Text=switch($job.operation){'install-native'{'Питомец установлен и выбран в штатном Codex.'}'install'{'Выбор сохранён. Открытый плеер подхватит его автоматически.'}'launch'{'Codex запущен и подключён.'}'connect'{'Codex подключён.'}'restore'{'Отключено. Codex продолжает работать.'}'validate'{'Пакет прошёл проверку.'}'import'{'Питомец добавлен в библиотеку.'}}}else{$ui.Status.Text='Ошибка: '+$result.message}}else{$ui.Status.Text='Операция завершилась без результата. Откройте журнал.'};Refresh-Pets;Set-Busy $false;$job.process.Dispose()}
     }catch{$ui.Status.Text=$_.Exception.Message;Write-Log $_.Exception.Message}})
-    $window.Add_Closing({param($sender,$event)if($script:job){$event.Cancel=$true;$ui.Status.Text='Дождитесь завершения операции перед закрытием.'}else{Save-Speed;$script:closingMain=$true;$timer.Stop();if($script:logWindow){$script:logWindow.Close()}}})
+    $window.Add_Closing({param($sender,$event)if($script:job){$event.Cancel=$true;$ui.Status.Text='Дождитесь завершения операции перед закрытием.'}else{Save-Speed;$script:closingMain=$true;$timer.Stop();Clear-WebPPreview;if($script:logWindow){$script:logWindow.Close()}}})
     if(-not $SmokeTest){
         $watchCommand="& '"+(Join-Path $PSScriptRoot 'Watch-Main.ps1').Replace("'","''")+"' -OwnerId $PID"
         $watchEncoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($watchCommand))

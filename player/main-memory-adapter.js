@@ -1,6 +1,6 @@
-﻿// Experimental in-memory adapter. Does not replace app files or native event handlers.
+// Experimental in-memory adapter. Does not replace app files or native event handlers.
 (() => {
- if (window.__xlinkMainPlayer?.version===2) return;
+ if (window.__xlinkMainPlayer?.version===5) return;
  window.__xlinkMainPlayer?.stop();
  let controller=null,canvas=null,native=null,host=null,active=null,observer=null,revision=0;
  const style=document.createElement('style');style.id='xlink-main-player-style';
@@ -14,14 +14,14 @@
   controller.update({state:native.dataset.codexPetState||'idle',speed:active.speed,reduced:document.documentElement.dataset.reducedMotion==='true'||(document.documentElement.dataset.reducedMotion!=='false'&&matchMedia('(prefers-reduced-motion: reduce)').matches)});
  }
  window.__xlinkMainPlayer={
-  version:2,
+  version:5,
   setSpeed(speed){if(!Number.isFinite(speed)||speed<0.2||speed>5)throw Error('Invalid animation speed');if(active&&active.speed!==speed){active.speed=speed;sync();}return this.status();},
-  async apply(pet,sources,speed=1){if(!Number.isFinite(speed)||speed<0.2||speed>5)throw Error('Invalid animation speed');const ticket=++revision;const images=new Map();await Promise.all([...new Set(Object.values(pet.actions).flatMap(a=>a.frames.map(f=>f.file)))].map(async file=>{if(!sources[file]?.startsWith('data:image/png;base64,'))throw Error('Invalid PNG');const im=new Image();im.src=sources[file];await im.decode();images.set(file,im);}));if(ticket!==revision)return false;
-   detach();active={pet,images,speed};if(!style.isConnected)document.head.append(style);
+  async apply(pet,sources,speed=1){if(!Number.isFinite(speed)||speed<0.2||speed>5)throw Error('Invalid animation speed');const ticket=++revision;const images=new Map();await Promise.all([...new Set(Object.values(pet.actions).flatMap(a=>a.frames.map(f=>f.file)))].map(async file=>{if(!/^data:image\/(png|webp);base64,/.test(sources[file]||''))throw Error('Invalid image');images.set(file,await loadPetImage(sources[file],file));}));if(ticket!==revision){releasePetImages(images);return false;}
+   detach();if(active)releasePetImages(active.images);active={pet,images,speed};if(!style.isConnected)document.head.append(style);
    if(!observer){observer=new MutationObserver(sync);observer.observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['data-codex-pet-state','data-reduced-motion']});}
    sync();return Boolean(controller);
   },
-  stop(){revision++;observer?.disconnect();observer=null;detach();active=null;style.remove();},
+  stop(){revision++;observer?.disconnect();observer=null;detach();if(active)releasePetImages(active.images);active=null;style.remove();},
   status(){return {active:!!controller,pet:active?.pet.id,state:native?.dataset.codexPetState,speed:active?.speed};}
  };
 })();

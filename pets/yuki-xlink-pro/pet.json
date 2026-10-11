@@ -1,0 +1,30 @@
+{
+  "formatVersion": 1,
+  "id": "yuki-xlink-pro",
+  "name": "Yuki Xlink Pro",
+  "description": "Анимация ноутбука: прозрачный WebP, 24 FPS. Тайминги читаются из файла. Пока одно действие.",
+  "author": {
+    "name": "XLink",
+    "url": "https://github.com/GrumpyMonka/xlink_codex_pet"
+  },
+  "license": {
+    "text": "AI-generated project artwork; XLink branding belongs to its owner. No separate third-party character pack used."
+  },
+  "previewImage": "assets/poster.png",
+  "mediaSize": [
+    720,
+    720
+  ],
+  "defaultAction": "work",
+  "actions": {
+    "work": {
+      "label": "Печатает на ноутбуке",
+      "file": "assets/laptop.webp"
+    }
+  },
+  "bindings": {
+    "running": {
+      "action": "work"
+    }
+  }
+}

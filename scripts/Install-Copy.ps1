@@ -27,7 +27,7 @@ if (Test-Path -LiteralPath $runtime) {
     Close-Runtime $runtime
 } else {
     $package = Get-AppxPackage -Name OpenAI.Codex | Select-Object -First 1
-    if (-not $package -or [string]$package.Version -ne '26.1002.7124.0') { throw 'Supported Codex Windows package: 26.1002.7124.0. Other builds require a verified adapter; installation stopped.' }
+    if (-not $package) { throw 'Installed Codex package was not found.' }
     $source = Join-Path $package.InstallLocation 'app'
     New-Item -ItemType Directory -Force -Path $runtime | Out-Null
     & robocopy $source $runtime /E /COPY:DAT /DCOPY:DA /R:0 /W:0 /NFL /NDL /NJH /NJS /NP

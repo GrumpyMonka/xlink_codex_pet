@@ -9,6 +9,17 @@ $lastMessage=''
 while($true){
     $owner=Get-Process -Id $OwnerId -ErrorAction SilentlyContinue
     if(-not $owner -or $owner.StartTime -ne $started){break}
+    # A fresh heartbeat comes from the already authenticated connection: no WMI or subprocess.
+    $heartbeatFile=Join-Path $state 'connection-bridge.json'
+    try {
+        $heartbeat=Get-Content -LiteralPath $heartbeatFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        $heartbeatAge=([DateTime]::UtcNow-[DateTime]::Parse($heartbeat.checkedAt).ToUniversalTime()).TotalSeconds
+        if($heartbeatAge -ge 0 -and $heartbeatAge -lt 6 -and (Get-Process -Id $heartbeat.ownerId -ErrorAction SilentlyContinue)){
+            Copy-Item -LiteralPath $heartbeatFile -Destination (Join-Path $state 'connection.json') -Force
+            Start-Sleep -Seconds 2
+            continue
+        }
+    }catch{}
     # Bootstrap only; the persistent bridge owns recovery while this window is closed.
     $bridge=$null
     $pidFile=Join-Path $state 'toolbar.pid'

@@ -44,7 +44,7 @@ function ensureTray(){
 }
 function report(message){if(message===lastMessage)return;lastMessage=message;fs.appendFileSync(path.join(state,'main-watch.log'),new Date().toISOString()+' '+message+'\n');}
 function maintain(){
- if(maintaining||Date.now()-lastMaintenance<3000||!enabled())return;
+ if(maintaining||Date.now()-lastMaintenance<15000||!enabled())return;
  maintaining=true;lastMaintenance=Date.now();
  const child=cp.spawn('powershell.exe',['-NoProfile','-ExecutionPolicy','Bypass','-File',path.join(__dirname,'Main.ps1'),'-Action','watch'],{windowsHide:true,stdio:['ignore','pipe','pipe']});
  let output='';child.stdout.on('data',b=>{output=(output+b).slice(-8000)});child.stderr.on('data',b=>{output=(output+b).slice(-8000)});
@@ -53,7 +53,15 @@ function maintain(){
 }
 (async()=>{while(enabled()){
  ensureTray();
- maintain();
- try{if(!connection)await attach();else await send('Runtime.evaluate',{expression:script+";window.__xlinkBridgeSeen=Date.now()"});}catch(e){disconnect();}
+ try{
+  if(!connection)await attach();
+  const response=await send('Runtime.evaluate',{expression:'(()=>{window.__xlinkBridgeSeen=Date.now();const p=window.__xlinkMainPlayer?.status();return {toolbar:!!window.__xlinkToolbar,active:!!p?.active,pet:p?.pet};})()',returnByValue:true});
+  if(response.exceptionDetails)throw Error('Player heartbeat failed');
+  const actual=response.result?.value,config=JSON.parse(fs.readFileSync(path.join(state,'main-settings.json'),'utf8').replace(/^\uFEFF/,''));
+  if(!actual?.toolbar)await send('Runtime.evaluate',{expression:script});
+  const healthy=!!actual&&(config.player==='native'||(actual.active&&actual.pet===config.pet));
+  fs.writeFileSync(path.join(state,'connection-bridge.json'),JSON.stringify({running:true,connected:healthy,checkedAt:new Date().toISOString(),ownerId:process.pid}));
+  if(!healthy)maintain();
+ }catch(e){disconnect();maintain();}
  await new Promise(resolve=>setTimeout(resolve,1500));
  }clearInterval(playbackTimer);if(connection){try{if(scriptId)await send('Page.removeScriptToEvaluateOnNewDocument',{identifier:scriptId});await send('Runtime.evaluate',{expression:'window.__xlinkToolbar?.stop();delete window.xlinkOpenManager'});await send('Runtime.removeBinding',{name:'xlinkOpenManager'});}catch{}}disconnect();})().catch(e=>{clearInterval(playbackTimer);console.error(e.message);disconnect();process.exitCode=1;});

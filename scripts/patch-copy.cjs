@@ -23,7 +23,7 @@ let js=read(target).toString();
 const needle='(0,k.jsx)(h,{assetMap:f,className:';
 if(js.split(needle).length!==2)throw Error('Renderer boundary changed');
 js=js.replace(needle,'(0,k.jsx)(CustomPetSwitch,{assetMap:f,className:');
-js='import {createCanvasPlayer as createCustomPlayer} from "./codex-pets/player.mjs";\n'+js+'\n'+fs.readFileSync(path.join(repo,'player/adapter.js.txt'),'utf8');
+js='import {createCanvasPlayer as createCustomPlayer, loadPetImage as loadCustomImage, releasePetImages as releaseCustomImages} from "./codex-pets/player.mjs";\n'+js+'\n'+fs.readFileSync(path.join(repo,'player/adapter.js.txt'),'utf8');
 const changed=new Map([[target,Buffer.from(js)]]);
 const resources=new Map(['player.mjs','timeline.mjs'].map(name=>[name,fs.readFileSync(path.join(repo,'player',name))]));
 resources.set('selection.json',Buffer.from('{}'));resources.set('revision.json',Buffer.from('{}'));
